@@ -1,0 +1,244 @@
+/* Standard CSS + GSAP Tabs Layout (Vertical) */
+
+.tabbed-content {
+    /* max-width: 1000px; */
+    /* margin: 40px auto; */
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    overflow: visible !important;
+}
+
+.tabbed-content .tab-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+    /* Desktop pinning is handled by GSAP ScrollTrigger in js/tabs.js */
+    position: relative;
+    top: 0;
+    height: max-content;
+    align-self: flex-start;
+    z-index: 10;
+    
+    border-right: 2px solid rgba(255, 255, 255, 0.1);
+    min-width: 250px;
+    padding-right: 20px;
+}
+
+.tabbed-content .tab-btn {
+    background: none;
+    border: none;
+    padding: 20px 30px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    position: relative;
+    z-index: 2;
+    font-family: 'Poppins', sans-serif;
+    text-align: left;
+    width: 100%;
+}
+
+.tabbed-content .tab-btn:hover {
+    color: #fff;
+}
+
+.tabbed-content .tab-btn.active {
+    color: var(--accent-green, #10b981);
+    font-weight: 600;
+}
+
+.tabbed-content .tab-indicator {
+    position: absolute;
+    right: -2px;
+    top: 0;
+    width: 3px;
+    height: 0;
+    background: linear-gradient(180deg, var(--primary-blue, #2563eb), var(--accent-green, #10b981));
+    border-radius: 3px 0 0 3px;
+    z-index: 3;
+}
+
+/* Tab Panel Wrapper & Panels */
+.tab-content-wrapper {
+    flex: 1;
+    position: relative;
+    min-height: 300px;
+    width: 100%;
+    overflow: visible;
+}
+
+.tab-panel {
+    width: 100%;
+    display: none; 
+    opacity: 0;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: absolute; 
+    top: 0;
+    left: 0;
+}
+
+.tab-panel.active {
+    display: flex;
+    position: relative; 
+    opacity: 1;
+}
+
+/* Provide Section Specific Styles */
+.provide-section  {
+    background: linear-gradient(135deg, rgba(11, 21, 40, 0.92) 0%, rgba(30, 27, 75, 0.88) 60%, rgba(6, 78, 59, 0.85) 100%), url('../images/about_team.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #fff;
+    /* Keep sticky calculations tied to viewport, not to section overflow clipping */
+    overflow: visible !important;
+}
+
+.provide-section h2 { 
+    color: #fff !important; 
+}
+.provide-section p.provide-lead { 
+    color: rgba(255, 255, 255, 0.8) !important; 
+}
+.provide-section .section-title h6 { 
+    color: var(--accent-green, #10b981) !important; 
+}
+
+.tab-card {
+    padding: 30px;
+    flex: 1;
+    min-width: 280px;
+    text-align: left;
+}
+
+.tab-card h3 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    color: #fff;
+    font-size: 1.6rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+.tab-card > p {
+    color: rgba(255, 255, 255, 0.78);
+    line-height: 1.7;
+    margin-bottom: 0;
+}
+
+.tab-card > i {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    font-size: 28px;
+    color: #fff;
+    margin-bottom: 18px;
+    background: linear-gradient(135deg, var(--primary-blue, #2563eb) 0%, var(--accent-purple, #7c3aed) 100%);
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.35);
+}
+
+.tab-img-container {
+    flex: 1;
+    min-width: 280px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.tab-img-container img {
+    width: 90%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45);
+    will-change: transform;
+}
+
+.tab-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.tab-list li {
+    margin: 10px 0;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    font-size: 0.95rem;
+}
+
+.tab-list i {
+    color: var(--accent-green, #10b981);
+    font-size: 16px;
+    margin-right: 12px;
+}
+
+/* Mobile Responsive */
+@media(max-width:768px){
+    .tabbed-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .tabbed-content .tab-nav {
+        flex-direction: row;
+        border-right: none;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+        padding-right: 0;
+        min-width: 100%;
+        width: 100%;
+        overflow-x: auto;
+        
+        /* Mobile pinning now uses CSS sticky, offset variable updated by JS */
+        position: sticky;
+        top: var(--tab-nav-mobile-top, 70px);
+        z-index: 50;
+        background: linear-gradient(0deg, #0b1528, #0b1528d9);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        margin-left: -15px;
+        margin-right: -15px;
+        padding-left: 15px;
+        padding-right: 15px;
+        width: calc(100% + 30px);
+        border-bottom: 1px solid rgb(255 255 255 / 64%);
+    }
+
+    .tabbed-content .tab-btn {
+        text-align: center;
+        padding: 15px 20px;
+        white-space: nowrap;
+        width: auto;
+        flex: 1;
+    }
+
+    .tabbed-content .tab-indicator {
+        right: auto;
+        bottom: -2px;
+        top: auto;
+        left: 0; /* Reset for mobile GSAP sliding */
+        height: 3px;
+        width: 0;
+        border-radius: 3px 3px 0 0;
+    }
+
+    .tab-panel {
+        flex-direction: column;
+    }
+}

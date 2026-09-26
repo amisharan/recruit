@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80" width="200" height="80" fill="none">
+  <rect width="200" height="80" rx="10" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+  <circle cx="37" cy="40" r="22" fill="#047857"/>
+  <circle cx="37" cy="40" r="17" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-dasharray="3 2"/>
+  <text x="37" y="45" font-family="'Montserrat', sans-serif" font-weight="900" font-size="12" fill="#ffffff" text-anchor="middle">ISO</text>
+  <text x="70" y="38" font-family="'Montserrat', sans-serif" font-weight="800" font-size="15" fill="#0f172a">ISO 9001:2015</text>
+  <text x="70" y="54" font-family="'Poppins', sans-serif" font-weight="600" font-size="11" fill="#64748b" letter-spacing="1">CERTIFIED</text>
+</svg>

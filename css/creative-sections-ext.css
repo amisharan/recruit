@@ -1,0 +1,151 @@
+.breadcrumb {
+    background: transparent !important;
+    padding: 0;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+}
+
+.breadcrumb-item {
+    display: flex;
+    align-items: center;
+}
+
+.breadcrumb-item+.breadcrumb-item::before {
+    content: "\f054" !important;
+    /* FontAwesome chevron-right */
+    font-family: "Font Awesome 6 Free" !important;
+    font-weight: 900 !important;
+    font-size: 0.65rem !important;
+    color: #ffffff !important;
+    padding-right: 0.8rem !important;
+    padding-left: 0.8rem !important;
+    display: inline-block !important;
+    line-height: normal !important;
+}
+
+.breadcrumb-item a {
+    transition: color 0.3s ease;
+}
+
+.breadcrumb-item a:hover {
+    color: #9f1212 !important;
+    text-decoration: underline !important;
+}
+
+.banner {
+    position: relative;
+    background:linear-gradient(90deg, #5751511f 0%, #181717b8 50%, #12151b00 80%), url(../images/bg/2banner.png) center / cover no-repeat;
+    z-index: 1;
+    overflow: hidden;
+}
+
+/* Light Overlay to keep the breadcrumb legible but show the bg image */
+/* .banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--gold);
+    z-index: -1;
+} */
+
+.banner-content h1 {
+    letter-spacing: -1px;
+}
+
+/* Service Grid with Gradient Hover */
+.service-grid-item {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    height: 100%;
+}
+
+.service-grid-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.service-grid-icon {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--dark-blue);
+    color: var(--gold);
+    border-radius: 50%;
+    margin-bottom: 1.5rem;
+    transition: 0.3s ease;
+}
+
+.service-grid-item:hover .service-grid-icon {
+    background: var(--gold);
+    color: var(--dark-blue);
+    transform: scale(1.1);
+}
+
+/* Timeline/Step-by-step styles */
+.process-step {
+    position: relative;
+}
+
+.process-step::after {
+    content: '';
+    position: absolute;
+    top: 30px;
+    right: -50%;
+    width: 100%;
+    height: 2px;
+    border-top: 2px dashed #ddd;
+    z-index: 0;
+}
+
+.process-step:last-child::after {
+    display: none;
+}
+
+.step-number {
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    border: 2px solid var(--gold);
+    border-radius: 50%;
+    color: var(--gold);
+    font-weight: bold;
+    font-size: 1.2rem;
+    background: #fff;
+    margin: 0 auto 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* Luxury Card Enhancement */
+.luxury-card {
+    border: none;
+    border-bottom: 5px solid transparent;
+    transition: 0.3s;
+}
+
+.luxury-card:hover {
+    border-bottom-color: var(--gold);
+}
+
+/* Call to Action Bar */
+/* .cta-banner {
+    background: var(--gold);
+    color: var(--dark-blue);
+    padding: 60px 0;
+    border-radius: 20px;
+    margin-top: 60px;
+} */
+
+@media (max-width: 991px) {
+    .process-step::after {
+        display: none;
+    }
+}

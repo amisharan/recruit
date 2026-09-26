@@ -1,0 +1,219 @@
+.cta-overlap-container {
+  transform: translateY(60px);
+  margin-bottom: -20px;
+}
+
+/* Pre-Footer CTA Card */
+.cta-overlap-card {
+  background: linear-gradient(135deg, #0b1528 0%, #1e1b4b 60%, #064e3b 100%);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  border-radius: 12px;
+  position: relative;
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.6);
+  overflow: hidden; /* Prevent decorative globe from bleeding out */
+}
+
+.cta-overlap-title {
+  letter-spacing: -1px;
+}
+
+.cta-overlap-text {
+  font-size: 1rem;
+}
+
+.btn-cta {
+  font-size: 1rem;
+  text-transform: none;
+  letter-spacing: 0.5px;
+  transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.btn-cta i {
+  transition: transform 0.3s ease;
+}
+
+.btn-cta:hover i {
+  transform: translateX(5px);
+}
+
+/* Theme correct Blue / Purple / Green glow */
+.cta-overlap-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 10% 90%, rgba(16, 185, 129, 0.15), transparent 50%),
+    radial-gradient(circle at 90% 10%, rgba(37, 99, 235, 0.2), transparent 50%);
+  pointer-events: none;
+  border-radius: 12px;
+}
+
+/* Globe Graphic styling */
+.cta-overlap-graphic {
+  position: absolute;
+  right: -2%;
+  top: -40%;
+  font-size: 380px;
+  pointer-events: none;
+  -webkit-text-stroke: 2px rgba(255, 255, 255, 0.05);
+  color: transparent;
+  transform: rotate(-15deg);
+}
+
+/* Added Shield overlay inside the globe graphic */
+.cta-overlap-graphic .shield-overlay {
+  position: absolute;
+  bottom: 30%;
+  right: 15%;
+  font-size: 180px;
+  color: var(--gold);
+  -webkit-text-stroke: 0;
+  opacity: 0.9;
+  filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.4));
+  transform: rotate(15deg);
+  /* Counter the parent rotation */
+}
+
+/* Footer Ultra Modern Redesign */
+.footer-ultra-modern {
+  background: linear-gradient(135deg, var(--dark-blue) 0%, #1a1a1ad2 100%), url('../images/bg/2.jpg');
+  background-size: cover;
+  background-color: #000;
+  padding-top: 120px;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer-huge-header {
+  letter-spacing: -2px;
+  color: #a1a1aa !important;
+}
+
+@media (max-width: 575.98px) {
+  .footer-huge-header {
+    font-size: 2.5rem !important;
+    letter-spacing: -1px;
+  }
+}
+
+.footer-heading-col {
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.footer-icon-sm {
+  font-size: 15px;
+}
+
+.footer-partner-tag {
+  font-size: 0.6rem;
+}
+
+.footer-heading-text {
+  font-size: 1.4rem;
+}
+
+.footer-icon-glow {
+  display: inline-flex;
+  width: 34px;
+  height: 34px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3), inset 0 0 8px rgba(255, 255, 255, 0.2);
+  margin-right: 12px;
+}
+
+.footer-links-modern li {
+  margin-bottom: 0.8rem;
+}
+
+.footer-links-modern a {
+  color: #ffffff;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  opacity: 0.8;
+}
+
+.footer-link-disabled {
+  pointer-events: none;
+  opacity: 1 !important;
+  color: #a1a1aa !important;
+}
+
+.footer-link-highlight {
+  opacity: 1 !important;
+}
+
+@media (max-width: 575.98px) {
+  .footer-links-modern a {
+    font-size: 0.85rem !important;
+  }
+}
+
+.footer-links-modern a:hover {
+  text-decoration: underline;
+  opacity: 1;
+  color: #fff;
+}
+
+.social-icon-modern {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.social-icon-modern:hover {
+  color: #000;
+  background: white;
+  border-color: white;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+.footer-bottom-link:hover {
+  opacity: 1 !important;
+  text-decoration: underline !important;
+}
+
+.footer-grid-row>div {
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 991.98px) {
+  .cta-overlap-graphic {
+    font-size: 250px;
+    right: -10%;
+    top: -10%;
+  }
+
+  .cta-overlap-graphic .shield-overlay {
+    font-size: 110px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .cta-overlap-graphic {
+    display: none;
+    /* Hide decorative globe on very small screens */
+  }
+
+  .cta-overlap-card {
+    text-align: center;
+    padding: 2.5rem 1.5rem !important;
+  }
+
+  .cta-overlap-text {
+    font-size: 0.9rem;
+  }
+}
