@@ -1,0 +1,14 @@
+{
+  "name": "siya-project",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "npm run dev --prefix recruit-ui",
+    "build": "npm run build --prefix recruit-ui",
+    "start": "npm run dev --prefix recruit-ui",
+    "preview": "npm run preview --prefix recruit-ui"
+  },
+  "workspaces": [
+    "recruit-ui"
+  ]
+}
