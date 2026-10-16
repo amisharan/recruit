@@ -214,22 +214,19 @@ export default function Footer() {
           <Grid container spacing={4}>
             {/* Col 1: Brand Info */}
             <Grid item xs={12} md={4}>
-              <Box sx={{ mb: 2 }}>
-                <Box
-                  component="img"
-                  src="/images/2logo.png"
-                  alt="1st Recruit LLC"
-                  onError={(e) => {
-                    e.target.onerror = null;
-                    e.target.src = '/images/logo.png';
-                  }}
-                  sx={{
-                    height: 48,
-                    objectFit: 'contain',
-                    filter: 'brightness(1.1)',
-                  }}
-                />
-              </Box>
+              <Typography
+                variant="h6"
+                sx={{
+                  fontFamily: '"Montserrat", sans-serif',
+                  fontWeight: 800,
+                  fontSize: '1.4rem',
+                  color: '#ffffff',
+                  mb: 1.5,
+                  letterSpacing: '-0.02em',
+                }}
+              >
+                1st Recruit
+              </Typography>
               <Typography variant="body2" sx={{ color: '#94a3b8', mb: 3, lineHeight: 1.7 }}>
                 1st-Recruit provides world-class staffing and technical recruitment services across the United States. Connecting leading companies with top-quality talent and ensuring precision placement.
               </Typography>

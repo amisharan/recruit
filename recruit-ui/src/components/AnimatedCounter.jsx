@@ -9,6 +9,7 @@ export default function AnimatedCounter({
   variant = 'h3',
   sx = {},
   className = '',
+  decimals,
 }) {
   const [count, setCount] = useState(0);
   const elementRef = useRef(null);
@@ -28,7 +29,10 @@ export default function AnimatedCounter({
 
             // Smooth easeOutExpo curve
             const easeProgress = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
-            const currentVal = Math.floor(easeProgress * target);
+            const isFloat = Number(target) % 1 !== 0;
+            const currentVal = isFloat
+              ? parseFloat((easeProgress * target).toFixed(decimals !== undefined ? decimals : 1))
+              : Math.floor(easeProgress * target);
 
             setCount(currentVal);
 
@@ -55,10 +59,15 @@ export default function AnimatedCounter({
         observer.unobserve(currentElem);
       }
     };
-  }, [target, duration]);
+  }, [target, duration, decimals]);
 
-  // Format with commas (e.g. 1,200)
-  const formattedCount = count.toLocaleString();
+  // Format with commas and exact decimals if needed
+  const isFloat = Number(target) % 1 !== 0;
+  const numDecimals = decimals !== undefined ? decimals : (isFloat ? 1 : 0);
+  const formattedCount = Number(count).toLocaleString(undefined, {
+    minimumFractionDigits: numDecimals,
+    maximumFractionDigits: numDecimals,
+  });
 
   return (
     <Typography

@@ -32,6 +32,127 @@ import MagneticButton from '../components/MagneticButton';
 import MarqueeText from '../components/MarqueeText';
 import AnimatedCounter from '../components/AnimatedCounter';
 
+// Staffing Advertising Cards Data
+// Theme Palette: Cohesive combination of Blue (#3B82F6), Purple (#8B5CF6), and Green (#22C55E)
+const staffingPromoCards = [
+  {
+    id: 1,
+    title: 'Contingent Staffing\nSolutions',
+    desc: 'On-demand temporary staffing solutions for short-term roles or projects.',
+    color: '#3B82F6', // Blue
+    cardBg: '#f0f7ff', // Soft pastel blue tint
+    cardHoverBg: '#e0effe', // Richer light blue on hover
+    lightBg: 'rgba(59, 130, 246, 0.12)',
+    borderLight: 'rgba(59, 130, 246, 0.28)',
+    hoverShadow: 'rgba(59, 130, 246, 0.22)',
+    icon: (
+      <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+        <circle cx="9" cy="7" r="4" />
+        <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+      </svg>
+    ),
+  },
+  {
+    id: 2,
+    title: 'Direct Hire Staffing\nSolutions',
+    desc: 'Streamlined recruitment services to identify and place permanent employees.',
+    color: '#8B5CF6', // Purple
+    cardBg: '#f5f3ff', // Soft pastel purple tint
+    cardHoverBg: '#ede9fe', // Richer light purple on hover
+    lightBg: 'rgba(139, 92, 246, 0.12)',
+    borderLight: 'rgba(139, 92, 246, 0.28)',
+    hoverShadow: 'rgba(139, 92, 246, 0.22)',
+    icon: (
+      <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="11" cy="11" r="8" />
+        <line x1="21" y1="21" x2="16.65" y2="16.65" />
+        <circle cx="11" cy="9" r="2.5" />
+        <path d="M7.5 14.5a4 4 0 0 1 7 0" />
+      </svg>
+    ),
+  },
+  {
+    id: 3,
+    title: 'Near-Shore Staffing\nSolutions',
+    desc: 'Strategic placement of skilled professionals in nearby locations.',
+    color: '#22C55E', // Green
+    cardBg: '#f0fdf4', // Soft pastel green tint
+    cardHoverBg: '#dcfce7', // Richer light green on hover
+    lightBg: 'rgba(34, 197, 94, 0.12)',
+    borderLight: 'rgba(34, 197, 94, 0.28)',
+    hoverShadow: 'rgba(34, 197, 94, 0.22)',
+    icon: (
+      <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#22C55E" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="7" r="3.5" />
+        <path d="M6 14a6 6 0 0 1 12 0" />
+        <line x1="12" y1="17" x2="12" y2="21" />
+        <line x1="8" y1="20" x2="12" y2="21" />
+        <line x1="16" y1="20" x2="12" y2="21" />
+      </svg>
+    ),
+  },
+  {
+    id: 4,
+    title: 'Global Payroll &\nCompliance Services',
+    desc: 'Simplifying payroll solutions by managing compensation, taxes, and compliance.',
+    color: '#3B82F6', // Blue
+    cardBg: '#f0f7ff', // Soft pastel blue tint
+    cardHoverBg: '#e0effe', // Richer light blue on hover
+    lightBg: 'rgba(59, 130, 246, 0.12)',
+    borderLight: 'rgba(59, 130, 246, 0.28)',
+    hoverShadow: 'rgba(59, 130, 246, 0.22)',
+    icon: (
+      <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+        <path d="M2 17l4 4 8-8" />
+      </svg>
+    ),
+  },
+  {
+    id: 5,
+    title: 'Recruitment Process\nOutsourcing (RPO)',
+    desc: 'Outsourced recruitment services offering end-to-end talent acquisition support.',
+    color: '#8B5CF6', // Purple
+    cardBg: '#f5f3ff', // Soft pastel purple tint
+    cardHoverBg: '#ede9fe', // Richer light purple on hover
+    lightBg: 'rgba(139, 92, 246, 0.12)',
+    borderLight: 'rgba(139, 92, 246, 0.28)',
+    hoverShadow: 'rgba(139, 92, 246, 0.22)',
+    icon: (
+      <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="12" r="9" />
+        <line x1="3.6" y1="9" x2="20.4" y2="9" />
+        <line x1="3.6" y1="15" x2="20.4" y2="15" />
+        <path d="M11.5 3a13 13 0 0 0 0 18" />
+        <path d="M12.5 3a13 13 0 0 1 0 18" />
+        <circle cx="12" cy="12" r="2" fill="#8B5CF6" />
+      </svg>
+    ),
+  },
+  {
+    id: 6,
+    title: 'Statement of Work\n(SOW) Solutions',
+    desc: 'Offering top-notch Statement of Work services to help you streamline your projects.',
+    color: '#22C55E', // Green
+    cardBg: '#f0fdf4', // Soft pastel green tint
+    cardHoverBg: '#dcfce7', // Richer light green on hover
+    lightBg: 'rgba(34, 197, 94, 0.12)',
+    borderLight: 'rgba(34, 197, 94, 0.28)',
+    hoverShadow: 'rgba(34, 197, 94, 0.22)',
+    icon: (
+      <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#22C55E" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="10" cy="8" r="4" />
+        <path d="M2 20a8 8 0 0 1 14 0" />
+        <circle cx="18" cy="15" r="4" />
+        <line x1="18" y1="13" x2="18" y2="17" />
+        <line x1="16" y1="15" x2="20" y2="15" />
+      </svg>
+    ),
+  },
+];
+
 export default function HomePage() {
   // Parallax Scrolling state (Effect #1)
   const [scrollY, setScrollY] = useState(0);
@@ -44,35 +165,35 @@ export default function HomePage() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Hero slide state (Effect #5: Image Crossfade)
+  // Hero slide state (Effect #5: Image Crossfade) with new slide content
   const heroSlides = [
     {
       image: '/images/recruitment_hero_1.jpg',
       tag: 'Premier Recruitment & Staffing',
-      title: 'Connecting Talent.',
-      subtitle: 'Creating Success.',
-      desc: '1st-Recruit delivers efficient, reliable hiring solutions, connecting leading companies with top-quality talent and ensuring the right candidate fits every role perfectly.',
+      title: 'Built on',
+      subtitle: 'Trust.',
+      desc: 'Recognized globally for delivery, innovation, and consistent workforce outcomes.',
     },
     {
       image: '/images/recruitment_hero_2.jpg',
       tag: 'Agile Workforce & Scalability',
-      title: 'Scalable Staffing.',
-      subtitle: 'Rapid Execution.',
-      desc: 'Delivering skilled technical and professional talent on demand, helping your business scale quickly and fill critical talent gaps efficiently.',
+      title: 'Simplified',
+      subtitle: 'Hiring.',
+      desc: 'Move your workforce plans forward with expert support at every stage of growth.',
     },
     {
       image: '/images/recruitment_hero_3.jpg',
       tag: 'Global Technical Talent',
-      title: 'Global Scale.',
-      subtitle: 'Precision Matching.',
-      desc: 'Empowering enterprises worldwide with pre-vetted software engineers, architects, data scientists, and specialized technical teams.',
+      title: 'Delivering',
+      subtitle: 'Talent.',
+      desc: 'End-to-end workforce and staffing solutions delivered through local expertise worldwide.',
     },
     {
       image: '/images/recruitment_hero_4.jpg',
-      tag: 'Immigration & Sponsorship',
-      title: 'H1-B Sponsorship &',
-      subtitle: 'Smooth Transfers.',
-      desc: 'Fully compliant, end-to-end U.S. visa transfer and sponsorship solutions for high-demand STEM professionals and multinational organizations.',
+      tag: 'Industry & Sector Expertise',
+      title: 'Industry',
+      subtitle: 'Focus.',
+      desc: 'Delivering workforce expertise across industries, from emerging markets to global enterprises.',
     },
   ];
 
@@ -457,7 +578,7 @@ export default function HomePage() {
           <Grid container spacing={3} textAlign="center">
             <Grid item xs={6} md={3} className="stagger-item stagger-delay-1">
               <AnimatedCounter
-                target={10}
+                target={15}
                 suffix="+"
                 variant="h3"
                 sx={{ fontFamily: '"Montserrat", sans-serif', fontWeight: 800, color: '#2563eb', mb: 0.5 }}
@@ -479,7 +600,8 @@ export default function HomePage() {
             </Grid>
             <Grid item xs={6} md={3} className="stagger-item stagger-delay-3" sx={{ borderLeft: { md: '1px solid #e2e8f0' } }}>
               <AnimatedCounter
-                target={98}
+                target={98.3}
+                decimals={1}
                 suffix="%"
                 variant="h3"
                 sx={{ fontFamily: '"Montserrat", sans-serif', fontWeight: 800, color: '#7c3aed', mb: 0.5 }}
@@ -917,23 +1039,37 @@ export default function HomePage() {
       </Box>
 
       {/* 6.5. Enterprise Compliance, Security & Protection Standards */}
-      <Box sx={{ py: { xs: 8, md: 10 }, backgroundColor: '#f3efe6', borderTop: '1px solid #e8e4db' }}>
-        <Container maxWidth="lg">
+      <Box
+        sx={{
+          py: { xs: 8, md: 10 },
+          position: 'relative',
+          backgroundImage: 'linear-gradient(135deg, rgba(8, 15, 30, 0.92) 0%, rgba(13, 27, 54, 0.88) 100%), url("/images/security_verification_bg.jpg")',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment: { md: 'fixed', xs: 'scroll' },
+          borderTop: '1px solid rgba(255, 255, 255, 0.1)',
+          borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
+          overflow: 'hidden',
+        }}
+      >
+        <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 2 }}>
           <Box sx={{ textAlign: 'center', mb: 5 }}>
             <Chip
               label="SECURITY & VERIFICATION"
               size="small"
               sx={{
-                backgroundColor: 'rgba(37, 99, 235, 0.12)',
-                color: '#2563eb',
+                backgroundColor: 'rgba(56, 189, 248, 0.16)',
+                color: '#38bdf8',
+                border: '1px solid rgba(56, 189, 248, 0.35)',
                 fontWeight: 700,
+                letterSpacing: '0.8px',
                 mb: 1.5,
               }}
             />
-            <Typography variant="h3" sx={{ fontFamily: '"Montserrat", sans-serif', fontWeight: 800, color: '#182230', mb: 1.5 }}>
+            <Typography variant="h3" sx={{ fontFamily: '"Montserrat", sans-serif', fontWeight: 800, color: '#ffffff', mb: 1.5 }}>
               Enterprise Compliance, Facility &amp; Asset Protection
             </Typography>
-            <Typography variant="body1" sx={{ color: '#5a687c', maxWidth: 660, mx: 'auto' }}>
+            <Typography variant="body1" sx={{ color: '#cbd5e1', maxWidth: 660, mx: 'auto' }}>
               We enforce stringent corporate compliance, identity validation, on-site personnel clearances, and security protocols across all operations.
             </Typography>
           </Box>
@@ -945,35 +1081,50 @@ export default function HomePage() {
                 title: 'Foreign & Export Control',
                 badge: 'USCIS & State Compliance',
                 desc: 'Full alignment with federal employment eligibility verification and international workforce mobility compliance standards.',
-                color: '#2563eb',
+                color: '#38bdf8',
               },
               {
                 image: '/images/foreign_guard.png',
                 title: 'Physical Asset & Access Control',
                 badge: 'Verified Deployment',
                 desc: 'Multi-tiered background checks, site authorization clearances, and continuous workplace accountability.',
-                color: '#10b981',
+                color: '#34d399',
               },
               {
                 image: '/images/services/security_gunmen.png',
                 title: 'On-Site Protection Standards',
                 badge: 'Facility Security Ready',
                 desc: 'Specialized enterprise protective monitoring, trained security support personnel, and secure client facilities.',
-                color: '#7c3aed',
+                color: '#a78bfa',
               },
             ].map((sec, idx) => (
-              <Grid item xs={12} md={4} key={idx} className={`stagger-item stagger-delay-${idx + 1}`}>
+              <Grid
+                item
+                xs={12}
+                md={4}
+                size={{ xs: 12, md: 4 }}
+                key={idx}
+                className={`stagger-item stagger-delay-${idx + 1}`}
+              >
                 <Card
                   className="hover-lift-card"
                   sx={{
                     p: 3.5,
                     borderRadius: 4,
                     height: '100%',
-                    backgroundColor: '#ffffff',
-                    border: '1px solid #e8e4db',
+                    backgroundColor: 'rgba(255, 255, 255, 0.05)',
+                    backdropFilter: 'blur(16px)',
+                    WebkitBackdropFilter: 'blur(16px)',
+                    border: '1px solid rgba(255, 255, 255, 0.12)',
                     borderTop: `4px solid ${sec.color} !important`,
                     textAlign: 'center',
-                    boxShadow: '0 8px 25px rgba(30, 25, 15, 0.04)',
+                    boxShadow: '0 12px 32px rgba(0, 0, 0, 0.35)',
+                    transition: 'transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease',
+                    '&:hover': {
+                      backgroundColor: 'rgba(255, 255, 255, 0.09)',
+                      borderColor: 'rgba(255, 255, 255, 0.25)',
+                      boxShadow: '0 18px 40px rgba(0, 0, 0, 0.5)',
+                    },
                   }}
                 >
                   <Box
@@ -983,6 +1134,9 @@ export default function HomePage() {
                       alignItems: 'center',
                       mb: 2.5,
                       height: 85,
+                      p: 1,
+                      borderRadius: 3,
+                      backgroundColor: 'rgba(255, 255, 255, 0.08)',
                     }}
                   >
                     <Box
@@ -993,17 +1147,17 @@ export default function HomePage() {
                         maxHeight: 76,
                         maxWidth: 160,
                         objectFit: 'contain',
-                        filter: 'drop-shadow(0 3px 6px rgba(0,0,0,0.08))',
+                        filter: 'drop-shadow(0 4px 10px rgba(0,0,0,0.3))',
                       }}
                     />
                   </Box>
-                  <Typography variant="caption" sx={{ color: sec.color, fontWeight: 700, textTransform: 'uppercase', display: 'block', mb: 0.5 }}>
+                  <Typography variant="caption" sx={{ color: sec.color, fontWeight: 700, textTransform: 'uppercase', display: 'block', mb: 0.5, letterSpacing: '0.5px' }}>
                     {sec.badge}
                   </Typography>
-                  <Typography variant="h6" sx={{ fontFamily: '"Montserrat", sans-serif', fontWeight: 700, color: '#182230', mb: 1.2 }}>
+                  <Typography variant="h6" sx={{ fontFamily: '"Montserrat", sans-serif', fontWeight: 700, color: '#ffffff', mb: 1.2 }}>
                     {sec.title}
                   </Typography>
-                  <Typography variant="body2" sx={{ color: '#5a687c', lineHeight: 1.6 }}>
+                  <Typography variant="body2" sx={{ color: '#94a3b8', lineHeight: 1.6 }}>
                     {sec.desc}
                   </Typography>
                 </Card>
@@ -1057,7 +1211,8 @@ export default function HomePage() {
               <Box sx={{ display: 'flex', gap: 3, mb: 4 }}>
                 <Box sx={{ p: 2, backgroundColor: 'rgba(255,255,255,0.06)', borderRadius: 3, borderLeft: '3px solid #10b981', minWidth: 140 }}>
                   <AnimatedCounter
-                    target={98}
+                    target={98.3}
+                    decimals={1}
                     suffix="%"
                     variant="h4"
                     sx={{ fontWeight: 800, color: '#34d399', display: 'block' }}
@@ -1226,7 +1381,167 @@ export default function HomePage() {
         </Container>
       </Box>
 
-      {/* 9. Contact & Consultation Section */}
+      {/* 9. Specialized Workforce Solutions (3 Columns x 3 Rows Interconnected Grid Template) */}
+      <Box
+        id="workforce-solutions"
+        sx={{
+          py: { xs: 8, md: 11 },
+          position: 'relative',
+          backgroundColor: '#ffffff',
+          borderTop: '1px solid #e5e7eb',
+          borderBottom: '1px solid #e5e7eb',
+        }}
+      >
+        <Container maxWidth="lg" sx={{ textAlign: 'center', mb: { xs: 5, md: 7 } }}>
+          <Chip
+            label="WORKFORCE & STAFFING SOLUTIONS"
+            size="small"
+            sx={{
+              backgroundColor: 'rgba(37, 99, 235, 0.08)',
+              color: '#2563eb',
+              fontWeight: 700,
+              fontSize: '0.8rem',
+              letterSpacing: '0.04em',
+              mb: 1.5,
+              px: 1.5,
+              py: 1.8,
+            }}
+          />
+          <Typography
+            variant="h3"
+            sx={{
+              fontFamily: '"Montserrat", sans-serif',
+              fontWeight: 800,
+              color: '#0f172a',
+              fontSize: { xs: '1.9rem', sm: '2.5rem', md: '2.9rem' },
+              mb: 1.5,
+              lineHeight: 1.2,
+            }}
+          >
+            Specialized Workforce Solutions
+          </Typography>
+          <Typography
+            variant="body1"
+            sx={{
+              color: '#64748b',
+              maxWidth: 680,
+              mx: 'auto',
+              fontSize: { xs: '0.98rem', md: '1.08rem' },
+            }}
+          >
+            Explore our comprehensive suite of global staffing and talent solutions designed to support your enterprise at every phase.
+          </Typography>
+        </Container>
+
+        {/* 3 Cards per row (3 Columns x 2 Rows) layout with generous spacing */}
+        <Container maxWidth="lg">
+          <Box
+            sx={{
+              display: 'grid',
+              gridTemplateColumns: {
+                xs: '1fr',
+                sm: 'repeat(3, 1fr)',
+                md: 'repeat(3, 1fr)',
+              },
+              gap: { xs: 2.5, sm: 3, md: 3.5 },
+              justifyContent: 'center',
+            }}
+          >
+            {staffingPromoCards.map((card) => (
+              <Box
+                key={card.id}
+                component={Link}
+                to="/services"
+                className="hover-lift-card"
+                  sx={{
+                    height: '100%',
+                    p: { xs: 4, sm: 4.5, md: 5 },
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    textAlign: 'center',
+                    textDecoration: 'none',
+                    backgroundColor: card.cardBg,
+                    border: `1.5px solid ${card.borderLight}`,
+                    borderRadius: 4,
+                    boxShadow: '0 4px 18px rgba(15, 23, 42, 0.04)',
+                    position: 'relative',
+                    cursor: 'pointer',
+                    transition: 'all 0.35s cubic-bezier(0.25, 1, 0.5, 1)',
+                    '&:hover': {
+                      backgroundColor: card.cardHoverBg,
+                      transform: 'translateY(-7px)',
+                      boxShadow: `0 8px 24px ${card.hoverShadow}, 0 0 0 1px ${card.color}`,
+                      borderColor: card.color,
+                    },
+                  }}
+                >
+                  {/* Clean Icon with Circular Outline */}
+                  <Box
+                    sx={{
+                      width: 68,
+                      height: 68,
+                      borderRadius: '50%',
+                      backgroundColor: '#ffffff',
+                      border: `1.5px solid ${card.id === 4 ? 'rgba(212, 0, 0, 0.2)' : card.borderLight}`,
+                      boxShadow: '0 2px 10px rgba(15, 23, 42, 0.05)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      mb: 2.8,
+                      transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                      '.hover-lift-card:hover &': {
+                        transform: 'scale(1.1)',
+                        boxShadow: `0 4px 14px ${card.hoverShadow}`,
+                      },
+                    }}
+                  >
+                    {card.icon}
+                  </Box>
+
+                  {/* Title matching template bold styling */}
+                  <Typography
+                    variant="h5"
+                    sx={{
+                      fontFamily: '"Montserrat", sans-serif',
+                      fontWeight: 700,
+                      color: card.id === 4 ? '#d40000' : '#111827',
+                      fontSize: { xs: '1.2rem', md: '1.35rem' },
+                      lineHeight: 1.35,
+                      whiteSpace: 'pre-line',
+                      mb: 1.8,
+                      minHeight: 56,
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      transition: 'color 0.25s ease',
+                      '.hover-lift-card:hover &': {
+                        color: card.id === 4 ? '#b00000' : card.color,
+                      },
+                    }}
+                  >
+                    {card.title}
+                  </Typography>
+
+                  {/* Description text matching screenshot style */}
+                  <Typography
+                    variant="body1"
+                    sx={{
+                      color: '#4b5563',
+                      lineHeight: 1.65,
+                      fontSize: { xs: '0.92rem', md: '0.96rem' },
+                      maxWidth: 320,
+                    }}
+                  >
+                    {card.desc}
+                  </Typography>
+                </Box>
+            ))}
+          </Box>
+        </Container>
+      </Box>
+
+      {/* 10. Contact & Consultation Section */}
       <Box sx={{ py: { xs: 8, md: 10 }, backgroundColor: '#f3efe6', borderTop: '1px solid #e8e4db' }}>
         <Container maxWidth="lg">
           <Card

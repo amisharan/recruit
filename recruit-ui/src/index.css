@@ -103,19 +103,69 @@ a {
 }
 
 /* ============================================================
-   3. Card Hover Lift (Shadow increase + Border change)
+   3. Premium Lift + Shadow Hover Animation
+   - Colors:
+     - Blue: #3B82F6
+     - Purple: #8B5CF6
+     - Green: #22C55E
+   - On hover: smooth upward lift 6-8px (translateY(-7px))
+   - Multi-layer shadow with subtle ambient gradient glow
+   - Colored border glow transition (350ms)
+   - Accessibility: respects prefers-reduced-motion
    ============================================================ */
 .hover-lift-card {
-  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
-              box-shadow 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
-              border-color 0.3s ease !important;
+  position: relative;
+  transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+              box-shadow 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+              border-color 0.35s ease,
+              background-color 0.35s ease !important;
   will-change: transform, box-shadow;
 }
 
 .hover-lift-card:hover {
-  transform: translateY(-8px) scale(1.015) !important;
-  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.14) !important;
-  border-color: rgba(37, 99, 235, 0.4) !important;
+  transform: translateY(-7px) !important;
+  /* Multi-layer soft premium elevation with subtle ambient blue-purple-green glow */
+  box-shadow: 
+    0 4px 10px rgba(15, 23, 42, 0.04),
+    0 14px 28px rgba(59, 130, 246, 0.08),
+    0 24px 44px rgba(139, 92, 246, 0.07),
+    0 0 0 1px rgba(59, 130, 246, 0.18) !important;
+  border-color: rgba(139, 92, 246, 0.38) !important;
+}
+
+/* Also apply to generic MUI Card containers with smooth transitions */
+.MuiCard-root.hover-lift-card:hover {
+  border-color: rgba(59, 130, 246, 0.42) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hover-lift-card,
+  .hover-lift-card:hover {
+    transform: none !important;
+    transition: box-shadow 0.2s ease, border-color 0.2s ease !important;
+  }
+}
+
+/* Right to Left Infinite Marquee Track */
+@keyframes scrollRightToLeft {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-scroll-rtl {
+  display: flex;
+  gap: 24px;
+  width: max-content;
+  animation: scrollRightToLeft 36s linear infinite;
+  will-change: transform;
+}
+
+.marquee-scroll-rtl:hover {
+  animation-play-state: paused;
 }
 
 /* ============================================================

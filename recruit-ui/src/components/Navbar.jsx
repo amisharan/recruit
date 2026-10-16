@@ -114,15 +114,11 @@ export default function Navbar() {
             >
               <Box
                 component="img"
-                src="/images/2logo.png"
+                src="/images/brand_logo.jpg"
                 alt="1st Recruit LLC"
-                onError={(e) => {
-                  e.target.onerror = null;
-                  e.target.src = '/images/logo.png';
-                }}
                 sx={{
-                  height: { xs: 38, sm: 46 },
-                  maxWidth: { xs: 180, sm: 220 },
+                  height: { xs: 44, sm: 54 },
+                  maxWidth: { xs: 200, sm: 240 },
                   objectFit: 'contain',
                 }}
               />
@@ -179,29 +175,6 @@ export default function Navbar() {
                   </Button>
                 );
               })}
-
-              <Button
-                component={Link}
-                to="/careers"
-                variant="contained"
-                startIcon={<WorkIcon />}
-                sx={{
-                  ml: 2,
-                  background: 'linear-gradient(135deg, #7c3aed 0%, #2563eb 100%)',
-                  color: '#ffffff',
-                  fontWeight: 600,
-                  fontSize: '0.85rem',
-                  py: 1,
-                  px: 2.2,
-                  boxShadow: '0 4px 14px rgba(124, 58, 237, 0.3)',
-                  '&:hover': {
-                    background: 'linear-gradient(135deg, #6d28d9 0%, #1d4ed8 100%)',
-                    boxShadow: '0 6px 20px rgba(124, 58, 237, 0.4)',
-                  },
-                }}
-              >
-                Open Jobs
-              </Button>
             </Box>
 
             {/* Mobile Hamburger Button */}
@@ -240,9 +213,9 @@ export default function Navbar() {
           >
             <Box
               component="img"
-              src="/images/2logo.png"
+              src="/images/brand_logo.jpg"
               alt="1st Recruit LLC"
-              sx={{ height: 36, objectFit: 'contain' }}
+              sx={{ height: 42, objectFit: 'contain' }}
             />
           </Box>
           <IconButton onClick={handleDrawerToggle}>
@@ -297,23 +270,6 @@ export default function Navbar() {
             );
           })}
         </List>
-
-        <Box sx={{ mt: 3 }}>
-          <Button
-            fullWidth
-            component={Link}
-            to="/careers"
-            variant="contained"
-            startIcon={<WorkIcon />}
-            onClick={handleDrawerToggle}
-            sx={{
-              background: 'linear-gradient(135deg, #7c3aed 0%, #2563eb 100%)',
-              py: 1.2,
-            }}
-          >
-            Explore Open Jobs
-          </Button>
-        </Box>
       </Drawer>
     </Box>
   );

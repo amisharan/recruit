@@ -74,7 +74,7 @@ export default function AboutPage() {
       id: 'panel3',
       question: 'What Results Can I Expect From Partnering with 1st Recruit?',
       answer:
-        'Clients experience significantly shorter hiring cycles (often candidate submissions within 24-48 hours), higher retention rates (>98%), transparent pricing models, and seamless onboarding support.',
+        'Clients experience significantly shorter hiring cycles (often candidate submissions within 24-48 hours), higher retention rates (>98.3%), transparent pricing models, and seamless onboarding support.',
     },
     {
       id: 'panel4',
